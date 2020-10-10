@@ -1,2 +1,4 @@
 # CovidMan
-work for Academia de Codigo lisbon
+// Work for Academia de Codigo, Lisbon.
+
+Duarte Godinho; Pedro Rafael; Bruno Almeida; Francisco Couto; Diana Amado
