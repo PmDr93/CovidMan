@@ -7,4 +7,9 @@ public class Characters extends GameObjects{
     private boolean resetCovid;
 
 
+    public boolean isDead() {
+        return dead;
+    }
+
+
 }
