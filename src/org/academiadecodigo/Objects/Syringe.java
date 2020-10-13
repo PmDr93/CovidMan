@@ -10,4 +10,10 @@ public class Syringe {
     public void isUsed(){
         used = true;
     }
+
+    public void useSyring(GhostCovid ghost){
+        if(!used){
+            ghost.kill(); // falta definir metodo kill na class
+        }
+    }
 }
