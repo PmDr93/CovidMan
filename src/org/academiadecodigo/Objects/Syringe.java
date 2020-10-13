@@ -14,6 +14,7 @@ public class Syringe {
     public void useSyring(GhostCovid ghost){
         if(!used){
             ghost.kill(); // falta definir metodo kill na class
+            isUsed();
         }
     }
 }
