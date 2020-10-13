@@ -13,15 +13,17 @@ public class Controls implements KeyboardHandler{
 
     public void init() {
         // defines what each key does (movement)
+        keyboard = new Keyboard(this);
+
         keyDown();
         keyLeft();
         keyRight();
         keyUp();
 
+    }
 
-
-        keyboard = new Keyboard(this);
-
+    public void setPacman(PacMan pacman) {
+        this.pacman = pacman;
     }
 
     public void keyLeft(){

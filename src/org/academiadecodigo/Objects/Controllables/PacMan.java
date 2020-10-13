@@ -30,12 +30,12 @@ public class PacMan extends Characters implements Controllable {
 
     @Override
     public void moveUp() {
-
+        pacman.translate(0, -20);
     }
 
     @Override
     public void moveDown() {
-
+        pacman.translate(0, 20);
     }
 
 }

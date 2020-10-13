@@ -5,8 +5,11 @@ import org.academiadecodigo.graphics.Field;
 
 public class Game {
 
-    private Field scenario;
+    private Field field;
     private Characters characters;
     private int score;
 
+    public void start() {
+        field.init();
+    }
 }
