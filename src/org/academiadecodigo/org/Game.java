@@ -12,12 +12,9 @@ public class Game {
     private PacMan pacMan;
 
     public void start() {
+        field = new Field();
         field.init();
         pacMan = new PacMan();
         field.countHearts(pacMan);
     }
-
-
-
-
 }
