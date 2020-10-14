@@ -7,19 +7,19 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class PacMan extends Characters implements Controllable {
 
-    private Picture picture;
     private GhostCovid ghost;
-    private Ellipse pacman;
+    private Picture pacman;
 
     public PacMan(){
-        this.pacman = new Ellipse(40,40,25,25);
-        this.pacman.fill();
+        this.pacman = new Picture(10,10,"resources/PixelArt.png");
+        this.pacman.draw();
     }
+
+
 
     @Override
     public void moveRight() {
         pacman.translate(20,0);
-
     }
 
     @Override
