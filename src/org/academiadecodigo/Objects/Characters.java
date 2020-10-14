@@ -15,11 +15,11 @@ public class Characters extends GameObjects implements GridPosition {
     }
 
     public int getLives() {
-        return Lives;
+        return lives;
     }
 
     public void setLives(int lives) {
-        Lives = lives;
+        lives = lives;
     }
 
     // used for virus movement
@@ -27,6 +27,7 @@ public class Characters extends GameObjects implements GridPosition {
     public int getCol() {
         return 0;
     }
+
 
     @Override
     public int getRow() {

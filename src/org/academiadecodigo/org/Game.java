@@ -14,6 +14,7 @@ public class Game {
     public void start() {
         field.init();
         pacMan = new PacMan();
+        field.countHearts(pacMan);
     }
 
 

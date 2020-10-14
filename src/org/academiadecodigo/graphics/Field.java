@@ -21,17 +21,27 @@ public class Field implements Grid {
         Rectangle fieldGame = new Rectangle(PADDING, 50, 40*CELL_SIZE, 20*CELL_SIZE);
         fieldGame.setColor(Color.WHITE);
         fieldGame.draw();
-        hearts();
+        //countHearts(pac);
     }
 
-    public void hearts() {
-        Picture heart1 = new Picture(20, 20, "resources/Hearth.png");
+    public void drawHearts(int col, int row) {
+        Picture heart1 = new Picture(col, row, "resources/Hearth.png");
         heart1.draw();
+        /*
         Picture heart2 = new Picture(50, 20, "resources/Hearth.png");
         heart2.draw();
+        Picture heart3 = new Picture(80,80,"resources/Hearth.png");
+        heart3.draw();
+         */
+    }
 
-        if (pac.isDead())
-
+    public void countHearts(PacMan lives){
+        int col = 20;
+        int row = 20;
+        for (int i = 0; i < lives.getLives(); i++){
+            drawHearts(col,row);
+            col += 30;
+        }
     }
 
     @Override
