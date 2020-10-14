@@ -5,7 +5,7 @@ import org.academiadecodigo.graphics.GridPosition;
 
 public class Characters extends GameObjects implements GridPosition {
 
-    private int numberLives = 3;
+    protected int lives = 3;
     private boolean dead;
     private boolean resetCovid;
 
@@ -14,7 +14,15 @@ public class Characters extends GameObjects implements GridPosition {
         return dead;
     }
 
+    public int getLives() {
+        return Lives;
+    }
 
+    public void setLives(int lives) {
+        Lives = lives;
+    }
+
+    // used for virus movement
     @Override
     public int getCol() {
         return 0;
@@ -32,6 +40,9 @@ public class Characters extends GameObjects implements GridPosition {
 
     @Override
     public void moveInDirection(GridMovement direction, int distance) {
+    }
+
+    public void moveUp() {
 
     }
 

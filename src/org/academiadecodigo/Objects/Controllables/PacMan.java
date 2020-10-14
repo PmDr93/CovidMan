@@ -7,35 +7,72 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class PacMan extends Characters implements Controllable {
 
+    private int col = 10;
+    private int row = 50;
     private GhostCovid ghost;
     private Picture pacman;
 
     public PacMan(){
-        this.pacman = new Picture(10,10,"resources/PixelArt.png");
+        this.pacman = new Picture(col,row,"resources/PixelArt.png");
         this.pacman.draw();
     }
 
 
+    public void loseLife() {
+        if (isDead()) {
+            lives --;
+        }
+    }
+
+
+
+
+
+    // movement and boundaries of pac man
 
     @Override
     public void moveRight() {
-        pacman.translate(20,0);
+
+        if (col >= 39*25) {
+            pacman.translate(0, 0);
+        } else {
+            pacman.translate(25, 0);
+            col += 25;
+        }
     }
 
     @Override
     public void moveLeft() {
-        pacman.translate(-20,0);
+
+        if (col <= 10) {
+            pacman.translate(0, 0);
+        } else {
+            pacman.translate(-25, 0);
+            col -= 25;
+        }
 
     }
 
     @Override
     public void moveUp() {
-        pacman.translate(0, -20);
+
+        if (row <= 50) {
+            pacman.translate(0, 0);
+        } else {
+            pacman.translate(0, -25);
+            row -= 25;
+        }
     }
 
     @Override
     public void moveDown() {
-        pacman.translate(0, 20);
+
+        if (row >= 21*25) {
+            pacman.translate(0, 0);
+        } else {
+            pacman.translate(0, 25);
+            row += 25;
+        }
     }
 
 }

@@ -15,4 +15,8 @@ public class Game {
         field.init();
         pacMan = new PacMan();
     }
+
+
+
+
 }

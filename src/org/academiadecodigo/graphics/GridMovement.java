@@ -14,7 +14,7 @@ public enum GridMovement {
         return dir.equals(oppositeDirection());
     }
 
-    // Obtains the opposite dirrection
+    // Obtains the opposite direction
     public GridMovement oppositeDirection() {
 
         GridMovement opposite = null;
