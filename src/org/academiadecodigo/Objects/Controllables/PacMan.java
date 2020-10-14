@@ -25,14 +25,11 @@ public class PacMan extends Characters implements Controllable {
     }
 
 
-
-
-
     // movement and boundaries of pac man
 
     @Override
     public void moveRight() {
-
+        pacman.load("resources/PixelArt.png");
         if (col >= 39*25) {
             pacman.translate(0, 0);
         } else {
@@ -43,6 +40,7 @@ public class PacMan extends Characters implements Controllable {
 
     @Override
     public void moveLeft() {
+        pacman.load("resources/PacLeft.png");
 
         if (col <= 10) {
             pacman.translate(0, 0);
@@ -55,7 +53,7 @@ public class PacMan extends Characters implements Controllable {
 
     @Override
     public void moveUp() {
-
+        pacman.load("resources/PacUp.png");
         if (row <= 50) {
             pacman.translate(0, 0);
         } else {
@@ -66,7 +64,7 @@ public class PacMan extends Characters implements Controllable {
 
     @Override
     public void moveDown() {
-
+        pacman.load("resources/PacDown.png");
         if (row >= 21*25) {
             pacman.translate(0, 0);
         } else {

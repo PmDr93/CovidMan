@@ -11,18 +11,11 @@ public class Main {
         /*
         Field field = new Field();
         field.init();
-
-         */
-
         PacMan pacMan = new PacMan();
-
-
 
         Controls control = new Controls();
         control.setPacman(pacMan);
-        control.init();
-
-
+        control.init();*/
 
         Game game = new Game();
         game.start();
