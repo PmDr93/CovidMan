@@ -1,13 +1,13 @@
 package org.academiadecodigo.MakeWords;
 
+import org.academiadecodigo.simplegraphics.pictures.Picture;
+
 public class MakeWords {
 
-    private String word1 = "banana";
+    //words: CODIGO, ACADEMIA
+    private Picture picture;
 
-    public String[] divideWord(String word) {
-        String[] divide = word.split("");
-
-        return divide;
+    Picture[] codigo = new Picture[][] {
     }
 
 

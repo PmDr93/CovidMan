@@ -10,10 +10,10 @@ import org.academiadecodigo.graphics.Field;
 public class Game {
 
     private Field field;
-    private Characters characters;
     private int score;
     private PacMan pacMan;
-    private CovidFactory factory = new CovidFactory();
+    GhostCovid[] covids = new GhostCovid[5];
+    //private CovidFactory factory = new CovidFactory();
 
     public void start() {
         field = new Field();
@@ -23,7 +23,8 @@ public class Game {
         control.setPacman(pacMan);
         control.init();
         field.countHearts(pacMan);
-        factory.covidFactory();
 
     }
+
+
 }

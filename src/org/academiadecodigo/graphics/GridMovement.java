@@ -3,7 +3,6 @@ package org.academiadecodigo.graphics;
 import com.sun.tools.jconsole.JConsoleContext;
 
 public enum GridMovement {
-
     UP,
     DOWN,
     LEFT,

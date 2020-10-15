@@ -12,8 +12,7 @@ public class Field implements Grid {
     private static final int PADDING = 10;
     private static final int CELL_SIZE = 25;
     private PacMan pac;
-    //private GhostCovid covid;
-
+    private MakeWords words;
 
     @Override
     public void init() {
