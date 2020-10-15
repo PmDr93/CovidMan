@@ -12,7 +12,7 @@ public class Field implements Grid {
     private static final int PADDING = 10;
     private static final int CELL_SIZE = 25;
     private PacMan pac;
-    private MakeWords words;
+    private MakeWords words = new MakeWords();
 
     @Override
     public void init() {
@@ -22,6 +22,7 @@ public class Field implements Grid {
         Rectangle fieldGame = new Rectangle(PADDING, 50, 40*CELL_SIZE, 20*CELL_SIZE);
         fieldGame.setColor(Color.WHITE);
         fieldGame.draw();
+        words.draw();
 
     }
 
