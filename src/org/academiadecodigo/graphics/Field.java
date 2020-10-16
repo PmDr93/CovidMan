@@ -11,7 +11,6 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Field implements Grid {
     private static final int PADDING = 10;
     private static final int CELL_SIZE = 25;
-    private PacMan pac;
     private MakeWords words = new MakeWords();
 
     @Override

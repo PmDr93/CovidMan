@@ -4,8 +4,13 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Syringe {
 
-    private Picture picture;
+    private Picture syringePic;
     private boolean used;
+
+    public Syringe() {
+        syringePic = new Picture(900, 500, "resources/syringe.png");
+        syringePic.draw();
+    }
 
     public void isUsed(){
         used = true;

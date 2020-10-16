@@ -1,51 +1,63 @@
 package org.academiadecodigo.Objects;
 
 import org.academiadecodigo.Objects.Controllables.Controllable;
-import org.academiadecodigo.graphics.GridMovement;
-import org.academiadecodigo.graphics.GridPosition;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class GhostCovid extends Characters implements Controllable {
 
     private Picture covid;
     private boolean dead;
-    private int col = 100;
-    private int row = 500;
+    private int col;
+    private int row;
+    private int delay = 200;
 
-    public GhostCovid () {
+
+    public GhostCovid (int col, int row) {
+        this.col = col;
+        this.row = row;
         covid = new Picture(col, row, "resources/NewCovid.png");
         covid.draw();
+        moveInDirection();
     }
 
-    public int getCol() {
-        return col;
+    public int getX() {
+        return covid.getX();
     }
 
-    public int getRow() {
-        return row;
+    public int getY() {
+        return covid.getY();
     }
+
 
     public void kill(){
         dead = true;
     }
 
 
+
     public void moveInDirection() {
         //case 1 = up, case 2 = down, case 3 = left, case 4 = right
-        int random = (int) Math.ceil(Math.random() * 4);
 
-        switch (random) {
-            case 1:
+        while(!dead) {
+            double random = Math.random();
+            if (random < 0.25) {
                 moveUp();
-            case 2:
-                moveDown();
-            case 3:
+            } else if (random < 0.50) {
                 moveLeft();
-            case 4:
+            } else if (random < 0.75) {
                 moveRight();
+            } else {
+                moveDown();
+            }
         }
 
     }
+
+    public void randomMove() {
+        moveUp();
+
+    }
+
 
     @Override
     public void moveRight() {

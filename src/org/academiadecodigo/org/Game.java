@@ -6,6 +6,7 @@ import org.academiadecodigo.Objects.Characters;
 import org.academiadecodigo.Objects.Controllables.PacMan;
 import org.academiadecodigo.Objects.CovidFactory;
 import org.academiadecodigo.Objects.GhostCovid;
+import org.academiadecodigo.Objects.Syringe;
 import org.academiadecodigo.graphics.Field;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
@@ -14,10 +15,11 @@ public class Game {
     private Field field;
     private int score;
     private PacMan pacMan;
-    GhostCovid[] covids = new GhostCovid[5];
-    MakeWords makewords = new MakeWords();
+    private Syringe syringe;
     private Picture picture;
-    //private CovidFactory factory = new CovidFactory();
+    private CovidFactory factory = new CovidFactory();
+
+
 
     public void start() {
         field = new Field();
@@ -27,6 +29,8 @@ public class Game {
         control.setPacman(pacMan);
         control.init();
         field.countHearts(pacMan);
+        syringe = new Syringe();
+        factory.covidFactory();
 
 
 

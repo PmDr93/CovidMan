@@ -1,11 +1,14 @@
 package org.academiadecodigo.Objects;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class CovidFactory {
 
-    private int numberCovid = 2;
-    GhostCovid covid;
-    int col = 100;
-    int row = 500;
+    private int numberCovid = 1;
+    private GhostCovid covids;
+    private Picture covid;
+    protected int col = 300;
+    protected int row = 500;
+
 
     public int getCol() {
         return col;
@@ -18,8 +21,11 @@ public class CovidFactory {
     public void covidFactory() {
 
         for (int i = 0; i < numberCovid; i++) {
-            covid = new GhostCovid();
+            covids = new GhostCovid(col, row);
             col += 50;
+
         }
     }
+
+
 }

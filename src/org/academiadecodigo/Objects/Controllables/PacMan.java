@@ -9,7 +9,7 @@ public class PacMan extends Characters implements Controllable {
 
     private int col = 10;
     private int row = 50;
-    private GhostCovid ghost;
+    private GhostCovid covid;
     private Picture pacman;
 
     public PacMan(){
@@ -23,6 +23,15 @@ public class PacMan extends Characters implements Controllable {
             lives --;
         }
     }
+
+    //when pac touch ghost lose life
+
+    public void deadByGhost() {
+        if (pacman.getX() == covid.getX() && pacman.getY() == covid.getY()) {
+            loseLife();
+        }
+    }
+
 
 
     // movement and boundaries of pac man
