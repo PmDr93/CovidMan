@@ -22,6 +22,7 @@ public class CovidFactory {
 
         for (int i = 0; i < numberCovid; i++) {
             covids[i] = new GhostCovid(col, row);
+            covids[i].setInitialMove();
             col += 50;
         }
         return covids;

@@ -1,6 +1,7 @@
 package org.academiadecodigo.Objects;
 
 import org.academiadecodigo.Objects.Controllables.Controllable;
+import org.academiadecodigo.Objects.Controllables.Moves;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class GhostCovid extends Characters implements Controllable {
@@ -10,6 +11,7 @@ public class GhostCovid extends Characters implements Controllable {
     private int col;
     private int row;
     private int delay = 200;
+    private Moves initialMove;
 
 
     public GhostCovid (int col, int row) throws InterruptedException {
@@ -17,6 +19,7 @@ public class GhostCovid extends Characters implements Controllable {
         this.row = row;
         covid = new Picture(col, row, "resources/NewCovid.png");
         covid.draw();
+        initialMove = Moves.values()[(int) Math.floor(Math.random()*4)];
         //moveInDirection();
     }
 
@@ -38,27 +41,40 @@ public class GhostCovid extends Characters implements Controllable {
 
     public void moveInDirection() throws InterruptedException {
         //case 1 = up, case 2 = down, case 3 = left, case 4 = right
-        while (!dead) {
-            moveRight();
-
+        
             Thread.sleep(50);
-            if (randomizer() > 0.8) {
-                double random = Math.random();
-                if (random < 0.25) {
-                    moveUp();
-                } else if (random < 0.50) {
-                    moveLeft();
-                } else if (random < 0.75) {
-                    moveRight();
-                } else {
-                    moveDown();
-                }
+            while (randomizer() < 0.8) {
+               setInitialMove();
             }
-        }
+
+            if (dead){
+                covid.delete();
+            }
     }
 
-    public void randomMove() {
-        moveUp();
+    public void setInitialMove() {
+        int random = (int) Math.floor(Math.random()*4);
+        /*
+        switch (random){
+           case 0: moveRight();
+           return Moves.RIGHT;
+
+           case 1: moveLeft();
+           return Moves.LEFT;
+
+           case 2: moveUp();
+           return Moves.UP;
+
+           case 3: moveDown();
+           return Moves.DOWN;
+
+        }
+
+         */
+
+        if(random<2){
+            moveRight();
+        } else moveLeft();
     }
 
 
@@ -66,6 +82,7 @@ public class GhostCovid extends Characters implements Controllable {
     public void moveRight() {
         if (col >= 39*25) {
             covid.translate(0, 0);
+            moveLeft();
         } else {
             covid.translate(25,0);
             col += 25;
@@ -76,6 +93,7 @@ public class GhostCovid extends Characters implements Controllable {
     public void moveLeft() {
         if (col <= 10) {
             covid.translate(0, 0);
+            moveRight();
         } else {
             covid.translate(-25, 0);
             col -= 25;
@@ -86,6 +104,7 @@ public class GhostCovid extends Characters implements Controllable {
     public void moveUp() {
         if (row <= 50) {
             covid.translate(0, 0);
+            moveDown();
         } else {
             covid.translate(0, -25);
             row -= 25;
@@ -97,6 +116,7 @@ public class GhostCovid extends Characters implements Controllable {
     public void moveDown() {
         if (row >= 21*25) {
             covid.translate(0, 0);
+            moveUp();
         } else {
             covid.translate(0, 25);
             row += 25;
