@@ -41,48 +41,45 @@ public class GhostCovid extends Characters implements Controllable {
 
     public void moveInDirection() throws InterruptedException {
         //case 1 = up, case 2 = down, case 3 = left, case 4 = right
-        
+        /*
             Thread.sleep(50);
-            while (randomizer() < 0.8) {
+            if (randomizer() > 0.8) {
                setInitialMove();
             }
 
             if (dead){
                 covid.delete();
             }
-    }
-
-    public void setInitialMove() {
-        int random = (int) Math.floor(Math.random()*4);
-        /*
-        switch (random){
-           case 0: moveRight();
-           return Moves.RIGHT;
-
-           case 1: moveLeft();
-           return Moves.LEFT;
-
-           case 2: moveUp();
-           return Moves.UP;
-
-           case 3: moveDown();
-           return Moves.DOWN;
-
-        }
 
          */
 
-        if(random<2){
-            moveRight();
-        } else moveLeft();
+        int rand = (int) Math.floor(Math.random()*100);
+
+        if(rand <30) {
+            setInitialMove();
+        }
+        if(!dead) {
+            Thread.sleep(50);
+            switch (initialMove) {
+                case RIGHT: moveRight(); break;
+                case DOWN: moveDown(); break;
+                case UP: moveUp(); break;
+                case LEFT: moveLeft(); break;
+            }
+        }
+    }
+
+    public Moves setInitialMove() {
+        int rand = (int) Math.floor(Math.random()*Moves.values().length);
+        return initialMove = Moves.values()[rand];
+
     }
 
 
     @Override
     public void moveRight() {
         if (col >= 39*25) {
-            covid.translate(0, 0);
-            moveLeft();
+            initialMove = Moves.LEFT;
         } else {
             covid.translate(25,0);
             col += 25;
@@ -92,8 +89,7 @@ public class GhostCovid extends Characters implements Controllable {
     @Override
     public void moveLeft() {
         if (col <= 10) {
-            covid.translate(0, 0);
-            moveRight();
+            initialMove = Moves.RIGHT;
         } else {
             covid.translate(-25, 0);
             col -= 25;
@@ -103,24 +99,20 @@ public class GhostCovid extends Characters implements Controllable {
     @Override
     public void moveUp() {
         if (row <= 50) {
-            covid.translate(0, 0);
-            moveDown();
+            initialMove = Moves.DOWN;
         } else {
             covid.translate(0, -25);
             row -= 25;
         }
-
     }
 
     @Override
     public void moveDown() {
         if (row >= 21*25) {
-            covid.translate(0, 0);
-            moveUp();
+            initialMove = Moves.UP;
         } else {
             covid.translate(0, 25);
             row += 25;
         }
-
     }
 }

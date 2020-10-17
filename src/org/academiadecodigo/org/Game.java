@@ -52,21 +52,12 @@ public class Game {
     }
 
     public void moveAll() throws InterruptedException {
-        /*
-    for(int i = 0; i <covids.length-1; i++){
-        for (GhostCovid ghost : covids) {
-            ghost.setInitialMove();
-        }
-        */
 
         while(true) {
-            for (GhostCovid go : covids) {
-                go.moveInDirection();
+            for (GhostCovid ghost : covids) {
+                ghost.moveInDirection();
             }
         }
-
-
-    
 
     }
 }

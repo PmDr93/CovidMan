@@ -6,7 +6,7 @@ public class CovidFactory {
     private int numberCovid = 3;
     private GhostCovid[] covids = new GhostCovid[numberCovid];
     private Picture covid;
-    protected int col = 918;
+    protected int col = 910;
     protected int row = 500;
 
 
@@ -21,7 +21,7 @@ public class CovidFactory {
     public GhostCovid[] covidFactory() throws InterruptedException {
 
         for (int i = 0; i < numberCovid; i++) {
-            covids[i] = new GhostCovid(col, row);
+            covids[i] = new GhostCovid(col,row);
             covids[i].setInitialMove();
             col += 50;
         }
