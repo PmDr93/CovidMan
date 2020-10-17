@@ -10,14 +10,14 @@ public class MakeWords {
     private Picture picture;
     Picture[] codigo = new Picture[] {
 
-            new Picture( 890,52,"resources/Letters/letterA.png"),
-            new Picture(40,200,"resources/Letters/letterC.png"),
-            new Picture(835,450,"resources/Letters/letterA.png"),
-            new Picture(360,498,"resources/Letters/letterD.png"),
-            new Picture(690,125,"resources/Letters/letterE.png"),
-            new Picture(285,100,"resources/Letters/letterM.png"),
-            new Picture(490,250,"resources/Letters/letterI.png"),
-            new Picture(12,475,"resources/Letters/letterA.png"),
+            new Picture(950,122,"resources/Letters/letterA.png"),
+            new Picture(12,200,"resources/Letters/letterC.png"),
+            new Picture(775,375,"resources/Letters/letterA.png"),
+            new Picture(275,400,"resources/Letters/letterD.png"),
+            new Picture(825,125,"resources/Letters/letterE.png"),
+            new Picture(460,55,"resources/Letters/letterM.png"),
+            new Picture(400,300,"resources/Letters/letterI.png"),
+            new Picture(12,400,"resources/Letters/letterA.png"),
     };
 
     public void draw(){

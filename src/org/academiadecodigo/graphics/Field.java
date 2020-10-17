@@ -5,6 +5,7 @@ import org.academiadecodigo.Objects.Controllables.PacMan;
 import org.academiadecodigo.Objects.GhostCovid;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Ellipse;
+import org.academiadecodigo.simplegraphics.graphics.Line;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
@@ -46,13 +47,75 @@ public class Field implements Grid {
     }
 
     public void drawObstacles(){
-        Rectangle verticalWall = new Rectangle(235, 100,CELL_SIZE, CELL_SIZE*10);
-        verticalWall.setColor(Color.BLUE);
-        verticalWall.fill();
+        Rectangle verticalWall1 = new Rectangle(235, 77,CELL_SIZE, CELL_SIZE*7);
+        verticalWall1.setColor(Color.BLUE);
+        verticalWall1.fill();
 
-        Rectangle horizontalWall = new Rectangle(235,350, CELL_SIZE*10, CELL_SIZE);
-        horizontalWall.setColor(Color.BLUE);
-        horizontalWall.fill();
+        Rectangle verticalWall2 = new Rectangle(490, 51,CELL_SIZE, CELL_SIZE*5);
+        verticalWall2.setColor(Color.BLUE);
+        verticalWall2.fill();
+
+        Rectangle verticalWall3 = new Rectangle(690, 350,CELL_SIZE, CELL_SIZE*8);
+        verticalWall3.setColor(Color.BLUE);
+        verticalWall3.fill();
+
+        Rectangle verticalWall4 = new Rectangle(235, 350,CELL_SIZE, CELL_SIZE*5);
+        verticalWall4.setColor(Color.BLUE);
+        verticalWall4.fill();
+
+        Rectangle verticalWall5 = new Rectangle(360, 150,CELL_SIZE, CELL_SIZE*9);
+        verticalWall5.setColor(Color.BLUE);
+        verticalWall5.fill();
+
+        Rectangle verticalWall6 = new Rectangle(865, 350,CELL_SIZE, CELL_SIZE*6);
+        verticalWall6.setColor(Color.BLUE);
+        verticalWall6.fill();
+
+        Rectangle verticalWall7 = new Rectangle(590, 102,CELL_SIZE, CELL_SIZE*6);
+        verticalWall7.setColor(Color.BLUE);
+        verticalWall7.fill();
+
+        Rectangle verticalWall8 = new Rectangle(865, 250,CELL_SIZE, CELL_SIZE*4);
+        verticalWall8.setColor(Color.BLUE);
+        verticalWall8.fill();
+
+        Rectangle verticalWall9 = new Rectangle(865, 75,CELL_SIZE, CELL_SIZE*4);
+        verticalWall9.setColor(Color.BLUE);
+        verticalWall9.fill();
+
+//Horizontal Walls
+
+        Rectangle horizontalWall1 = new Rectangle(12,150, CELL_SIZE*5, CELL_SIZE);
+        horizontalWall1.setColor(Color.BLUE);
+        horizontalWall1.fill();
+
+        Rectangle horizontalWall2 = new Rectangle(120,450, CELL_SIZE*20, CELL_SIZE);
+        horizontalWall2.setColor(Color.BLUE);
+        horizontalWall2.fill();
+
+        Rectangle horizontalWall3 = new Rectangle(235,350, CELL_SIZE*5, CELL_SIZE);
+        horizontalWall3.setColor(Color.BLUE);
+        horizontalWall3.fill();
+
+        Rectangle horizontalWall4 = new Rectangle(84,252, CELL_SIZE*7, CELL_SIZE);
+        horizontalWall4.setColor(Color.BLUE);
+        horizontalWall4.fill();
+
+        Rectangle horizontalWall5 = new Rectangle(490,350, CELL_SIZE*19, CELL_SIZE);
+        horizontalWall5.setColor(Color.BLUE);
+        horizontalWall5.fill();
+
+        Rectangle horizontalWall6 = new Rectangle(385,252, CELL_SIZE*13, CELL_SIZE);
+        horizontalWall6.setColor(Color.BLUE);
+        horizontalWall6.fill();
+
+        Rectangle horizontalWall7 = new Rectangle(710,150, CELL_SIZE*12, CELL_SIZE);
+        horizontalWall7.setColor(Color.BLUE);
+        horizontalWall7.fill();
+
+        Rectangle horizontalWall8 = new Rectangle(12,350, CELL_SIZE*5, CELL_SIZE);
+        horizontalWall8.setColor(Color.BLUE);
+        horizontalWall8.fill();
     }
 
 

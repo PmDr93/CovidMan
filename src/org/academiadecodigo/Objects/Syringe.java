@@ -8,7 +8,7 @@ public class Syringe {
     private boolean used;
 
     public Syringe() {
-        syringePic = new Picture(900, 500, "resources/syringe.png");
+        syringePic = new Picture(775, 450, "resources/syringe.png");
         syringePic.draw();
     }
 
