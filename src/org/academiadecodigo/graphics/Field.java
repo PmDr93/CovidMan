@@ -22,7 +22,7 @@ public class Field implements Grid {
         fieldGame.setColor(Color.WHITE);
         fieldGame.draw();
         words.draw();
-
+        drawObstacles();
     }
 
     public void drawHearts(int col, int row) {
@@ -43,6 +43,16 @@ public class Field implements Grid {
             drawHearts(col,row);
             col += 30;
         }
+    }
+
+    public void drawObstacles(){
+        Rectangle verticalWall = new Rectangle(235, 100,CELL_SIZE, CELL_SIZE*10);
+        verticalWall.setColor(Color.BLUE);
+        verticalWall.fill();
+
+        Rectangle horizontalWall = new Rectangle(235,350, CELL_SIZE*10, CELL_SIZE);
+        horizontalWall.setColor(Color.BLUE);
+        horizontalWall.fill();
     }
 
 

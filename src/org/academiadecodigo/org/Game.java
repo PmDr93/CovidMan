@@ -30,9 +30,7 @@ public class Game {
         control.init();
         field.countHearts(pacMan);
         syringe = new Syringe();
-        factory.covidFactory();
-
-
+        //factory.covidFactory();
 
     }
 
