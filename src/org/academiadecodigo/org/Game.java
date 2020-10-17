@@ -15,13 +15,15 @@ public class Game {
     private Field field;
     private int score;
     private PacMan pacMan;
+    private GhostCovid[] covids;
     private Syringe syringe;
     private Picture picture;
     private CovidFactory factory = new CovidFactory();
 
 
-
-    public void start() {
+    // start the game, objects start to move
+    public void start() throws InterruptedException {
+        /**
         field = new Field();
         field.init();
         pacMan = new PacMan();
@@ -30,9 +32,31 @@ public class Game {
         control.init();
         field.countHearts(pacMan);
         syringe = new Syringe();
-        //factory.covidFactory();
+        factory.covidFactory();
+         */
 
+        moveAll();
     }
 
+    // iniciar todos os objectos dentro de campo
+    public void init() throws InterruptedException {
+        field = new Field();
+        field.init();
+        pacMan = new PacMan();
+        Controls control = new Controls();
+        control.setPacman(pacMan);
+        control.init();
+        field.countHearts(pacMan);
+        syringe = new Syringe();
+        covids = factory.covidFactory();
+    }
 
+    public void moveAll() throws InterruptedException {
+        for(GhostCovid ghost: covids){
+            if (!ghost.isDead()) {
+                ghost.moveInDirection();
+            }
+
+        }
+    }
 }
