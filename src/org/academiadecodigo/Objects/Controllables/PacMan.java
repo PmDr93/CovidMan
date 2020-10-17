@@ -18,10 +18,6 @@ public class PacMan extends Characters implements Controllable {
     public PacMan(){
         this.pacman = new Picture(col,row,"resources/PixelArt.png");
         this.pacman.draw();
-<<<<<<< HEAD
-=======
-
->>>>>>> f71193c6c120ecbce439de4fcd719575c781f6c5
     }
 
     public int getRow() {

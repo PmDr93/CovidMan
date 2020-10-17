@@ -20,48 +20,28 @@ public class Game {
     private Syringe syringe;
     private Picture picture;
     private CovidFactory factory = new CovidFactory();
-<<<<<<< HEAD
     private GhostCovid covid;
     private MakeWords words = new MakeWords();
     Picture heart1 = new Picture(20, 20, "resources/Hearth.png");
-=======
-    private GhostCovid[] covids;
->>>>>>> f71193c6c120ecbce439de4fcd719575c781f6c5
 
 
     public void init() throws InterruptedException {
         field = new Field();
         field.init();
-<<<<<<< HEAD
         words.draw();
         heart1.draw();
-=======
->>>>>>> f71193c6c120ecbce439de4fcd719575c781f6c5
         pacMan = new PacMan();
         syringe = new Syringe();
         covid = new GhostCovid(810, 500);
         Controls control = new Controls();
         control.setPacman(pacMan);
         control.init();
-<<<<<<< HEAD
         pacMan.setSyringe(syringe);
         pacMan.setCovid(covid);
         catchLetter();
 
-=======
         //covids = new GhostCovid(810, 500);
         pacMan.setSyringe(syringe);
->>>>>>> f71193c6c120ecbce439de4fcd719575c781f6c5
-
-
-
-
-
-
-    }
-
-<<<<<<< HEAD
-    public void start() {
 
     }
 
@@ -97,28 +77,6 @@ public class Game {
            downWord[7].draw();
        }
 
-=======
-    public void start() throws InterruptedException {
-        hearts();
-        moveAll();
-    }
 
-
-    //create and remove hearts/lives
-    public void hearts() {
-        Picture heart1 = new Picture(20, 20, "resources/Hearth.png");
-        heart1.draw();
-
-    }
-
-    public void moveAll() throws InterruptedException {
-        covids = factory.covidFactory();
-        for (GhostCovid go: covids){
-            pacMan.setCovid(go);
-            go.moveInDirection();
-        }
->>>>>>> f71193c6c120ecbce439de4fcd719575c781f6c5
-    }
-
-
+}
 }
