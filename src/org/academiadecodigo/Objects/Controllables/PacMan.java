@@ -29,6 +29,7 @@ public class PacMan extends Characters implements Controllable {
     public void deadByGhost() {
         if (pacman.getX() == covid.getX() && pacman.getY() == covid.getY()) {
             loseLife();
+
         }
     }
 

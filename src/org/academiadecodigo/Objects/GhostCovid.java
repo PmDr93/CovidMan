@@ -12,12 +12,12 @@ public class GhostCovid extends Characters implements Controllable {
     private int delay = 200;
 
 
-    public GhostCovid (int col, int row) {
+    public GhostCovid (int col, int row) throws InterruptedException {
         this.col = col;
         this.row = row;
         covid = new Picture(col, row, "resources/NewCovid.png");
         covid.draw();
-        moveInDirection();
+        //moveInDirection();
     }
 
     public int getX() {
@@ -35,11 +35,15 @@ public class GhostCovid extends Characters implements Controllable {
 
 
 
-    public void moveInDirection() {
+    public void moveInDirection() throws InterruptedException {
         //case 1 = up, case 2 = down, case 3 = left, case 4 = right
+        double random1 = Math.random();
+
+
 
         while(!dead) {
             double random = Math.random();
+            Thread.sleep(300);
             if (random < 0.25) {
                 moveUp();
             } else if (random < 0.50) {

@@ -21,7 +21,7 @@ public class Game {
 
 
 
-    public void start() {
+    public void start() throws InterruptedException {
         field = new Field();
         field.init();
         pacMan = new PacMan();
@@ -30,7 +30,8 @@ public class Game {
         control.init();
         field.countHearts(pacMan);
         syringe = new Syringe();
-        //factory.covidFactory();
+        factory.covidFactory();
+        pacMan.deadByGhost();
 
     }
 

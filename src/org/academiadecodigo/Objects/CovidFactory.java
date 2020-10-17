@@ -18,7 +18,7 @@ public class CovidFactory {
         return row;
     }
 
-    public void covidFactory() {
+    public void covidFactory() throws InterruptedException {
 
         for (int i = 0; i < numberCovid; i++) {
             covids = new GhostCovid(col, row);
