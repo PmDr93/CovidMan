@@ -40,9 +40,6 @@ public class Game {
         pacMan.setCovid(covid);
         catchLetter();
 
-        //covids = new GhostCovid(810, 500);
-        pacMan.setSyringe(syringe);
-
     }
 
 
