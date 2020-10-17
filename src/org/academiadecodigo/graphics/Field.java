@@ -28,7 +28,7 @@ public class Field implements Grid {
         drawObstacles();
     }
 
-    /*public void drawHearts(int col, int row) {
+    public void drawHearts(int col, int row) {
         Picture heart1 = new Picture(col, row, "resources/Hearth.png");
         heart1.draw();
         /*
@@ -37,7 +37,7 @@ public class Field implements Grid {
         Picture heart3 = new Picture(80,80,"resources/Hearth.png");
         heart3.draw();
          */
-    /*}
+    }
 
     public void countHearts(PacMan lives){
         int col = 20;
@@ -46,7 +46,7 @@ public class Field implements Grid {
             drawHearts(col,row);
             col += 30;
         }
-    }*/
+    }
 
 
 
