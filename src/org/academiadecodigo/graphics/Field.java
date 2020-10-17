@@ -43,10 +43,12 @@ public class Field implements Grid {
         for (int i = 0; i < lives.getLives(); i++){
             drawHearts(col,row);
             col += 30;
+
         }
     }
 
     public void drawObstacles(){
+
         Rectangle verticalWall1 = new Rectangle(235, 77,CELL_SIZE, CELL_SIZE*7);
         verticalWall1.setColor(Color.BLUE);
         verticalWall1.fill();
@@ -97,7 +99,7 @@ public class Field implements Grid {
         horizontalWall3.setColor(Color.BLUE);
         horizontalWall3.fill();
 
-        Rectangle horizontalWall4 = new Rectangle(84,252, CELL_SIZE*7, CELL_SIZE);
+        Rectangle horizontalWall4 = new Rectangle(85,252, CELL_SIZE*7, CELL_SIZE);
         horizontalWall4.setColor(Color.BLUE);
         horizontalWall4.fill();
 
@@ -117,7 +119,6 @@ public class Field implements Grid {
         horizontalWall8.setColor(Color.BLUE);
         horizontalWall8.fill();
     }
-
 
 
     @Override
