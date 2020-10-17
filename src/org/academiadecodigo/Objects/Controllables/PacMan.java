@@ -2,6 +2,7 @@ package org.academiadecodigo.Objects.Controllables;
 
 import org.academiadecodigo.Objects.Characters;
 import org.academiadecodigo.Objects.GhostCovid;
+import org.academiadecodigo.org.Game;
 import org.academiadecodigo.simplegraphics.graphics.Ellipse;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
@@ -11,8 +12,10 @@ public class PacMan extends Characters implements Controllable {
     private int row = 50;
     private GhostCovid covid;
     private Picture pacman;
+    private Game test;
 
-    public PacMan(){
+    public PacMan(Game game){
+        test = game;
         this.pacman = new Picture(col,row,"resources/PixelArt.png");
         this.pacman.draw();
     }
@@ -22,6 +25,14 @@ public class PacMan extends Characters implements Controllable {
         if (isDead()) {
             lives --;
         }
+    }
+
+    public int getX(){
+        return pacman.getX();
+    }
+
+    public int getY(){
+        return pacman.getY();
     }
 
     //when pac touch ghost lose life
@@ -45,6 +56,7 @@ public class PacMan extends Characters implements Controllable {
             pacman.translate(25, 0);
             col += 25;
         }
+        test.catchLetter();
     }
 
     @Override
@@ -57,7 +69,7 @@ public class PacMan extends Characters implements Controllable {
             pacman.translate(-25, 0);
             col -= 25;
         }
-
+        test.catchLetter();
     }
 
     @Override
@@ -69,6 +81,8 @@ public class PacMan extends Characters implements Controllable {
             pacman.translate(0, -25);
             row -= 25;
         }
+        test.catchLetter();
+
     }
 
     @Override
@@ -80,6 +94,7 @@ public class PacMan extends Characters implements Controllable {
             pacman.translate(0, 25);
             row += 25;
         }
+        test.catchLetter();
     }
 
 }
