@@ -3,10 +3,10 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class CovidFactory {
 
-    private int numberCovid = 1;
+    private int numberCovid = 2;
     private GhostCovid covids;
     private Picture covid;
-    protected int col = 300;
+    protected int col = 910;
     protected int row = 500;
 
 
@@ -23,7 +23,7 @@ public class CovidFactory {
         for (int i = 0; i < numberCovid; i++) {
             covids = new GhostCovid(col, row);
             col += 50;
-
+            covids.moveInDirection();
         }
     }
 

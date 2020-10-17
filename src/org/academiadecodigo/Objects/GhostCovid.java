@@ -1,11 +1,13 @@
 package org.academiadecodigo.Objects;
 
 import org.academiadecodigo.Objects.Controllables.Controllable;
+import org.academiadecodigo.Objects.Controllables.PacMan;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class GhostCovid extends Characters implements Controllable {
 
     private Picture covid;
+    private PacMan pac;
     private boolean dead;
     private int col;
     private int row;
@@ -17,7 +19,6 @@ public class GhostCovid extends Characters implements Controllable {
         this.row = row;
         covid = new Picture(col, row, "resources/NewCovid.png");
         covid.draw();
-        //moveInDirection();
     }
 
     public int getX() {
@@ -28,9 +29,9 @@ public class GhostCovid extends Characters implements Controllable {
         return covid.getY();
     }
 
-
-    public void kill(){
+    public void death(){
         dead = true;
+        covid.delete();
     }
 
 
@@ -41,9 +42,9 @@ public class GhostCovid extends Characters implements Controllable {
 
 
 
-        while(!dead) {
+        while (!dead) {
             double random = Math.random();
-            Thread.sleep(300);
+            Thread.sleep(150);
             if (random < 0.25) {
                 moveUp();
             } else if (random < 0.50) {
@@ -54,11 +55,6 @@ public class GhostCovid extends Characters implements Controllable {
                 moveDown();
             }
         }
-
-    }
-
-    public void randomMove() {
-        moveUp();
 
     }
 

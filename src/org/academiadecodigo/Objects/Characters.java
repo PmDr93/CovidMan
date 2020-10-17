@@ -1,18 +1,15 @@
 package org.academiadecodigo.Objects;
 
+import org.academiadecodigo.Objects.GameObjects;
 import org.academiadecodigo.graphics.GridMovement;
 import org.academiadecodigo.graphics.GridPosition;
 
 public class Characters extends GameObjects {
 
-    protected int lives = 3;
-    private boolean dead;
+    protected int lives;
+
     private boolean resetCovid;
 
-
-    public boolean isDead() {
-        return dead;
-    }
 
     public int getLives() {
         return lives;
@@ -23,5 +20,7 @@ public class Characters extends GameObjects {
     }
 
     // used for virus movement
+
+
 
 }

@@ -5,21 +5,31 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Syringe {
 
     private Picture syringePic;
-    private boolean used;
+    private boolean isUsed = false;
+
 
     public Syringe() {
-        syringePic = new Picture(900, 500, "resources/syringe.png");
+        syringePic = new Picture(10, 250, "resources/syringe.png");
         syringePic.draw();
     }
 
-    public void isUsed(){
-        used = true;
+    public int getX() {
+        return syringePic.getX();
     }
 
-    public void useSyring(GhostCovid ghost){
-        if(!used){
-            ghost.kill(); // falta definir metodo kill na class
-            isUsed();
-        }
+    public int getY() {
+        return syringePic.getY();
+    }
+
+    public boolean getIsUsed() {
+        return isUsed;
+    }
+
+    public void setUsed(boolean used) {
+        isUsed = used;
+    }
+
+    public void remove() {
+        syringePic.delete();
     }
 }
