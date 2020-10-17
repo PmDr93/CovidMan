@@ -21,19 +21,19 @@ public class CovidFactory {
     public GhostCovid[] covidFactory() throws InterruptedException {
 
         for (int i = 0; i < numberCovid; i++) {
-            int randCol = ((int) Math.floor(Math.random()*910));
-            int randRow = ((int) Math.floor(Math.random()*500));
+            int randCol = ((int) Math.floor(Math.random()*950));
+            int randRow = ((int) Math.floor(Math.random()*440));
 
             while(randCol % 25 != 0){
-                randCol = ((int) Math.floor(Math.random()*910));
+                randCol = ((int) Math.floor(Math.random()*950));
             }
             if(randCol % 25 == 0){
-                col = randCol;
+                col = randCol+10;
                 System.out.println(" col "+col);
             }
 
-            while(randRow % 25 != 0){
-                randRow = ((int) Math.floor(Math.random()*500));
+            while(randRow % 25 != 0 || randRow < 50){
+                randRow = ((int) Math.floor(Math.random()*440));
             }
             if (randRow % 25 == 0){
                 row = randRow;
