@@ -9,7 +9,7 @@ public class Syringe {
 
 
     public Syringe() {
-        syringePic = new Picture(10, 250, "resources/syringe.png");
+        syringePic = new Picture(10, 250, "resources/Syringe.png");
         syringePic.draw();
     }
 

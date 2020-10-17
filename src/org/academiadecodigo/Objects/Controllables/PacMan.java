@@ -15,10 +15,10 @@ public class PacMan extends Characters implements Controllable {
     private Syringe syringe;
     private boolean hasSyringe;
 
-    public PacMan(int lives){
+    public PacMan(){
         this.pacman = new Picture(col,row,"resources/PixelArt.png");
         this.pacman.draw();
-        this.lives = lives;
+
     }
 
     public int getRow() {

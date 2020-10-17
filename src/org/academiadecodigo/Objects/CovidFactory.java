@@ -3,8 +3,8 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class CovidFactory {
 
-    private int numberCovid = 2;
-    private GhostCovid covids;
+    private int numberCovid = 5;
+    private GhostCovid[] covids= new GhostCovid[numberCovid];
     private Picture covid;
     protected int col = 910;
     protected int row = 500;
@@ -18,13 +18,13 @@ public class CovidFactory {
         return row;
     }
 
-    public void covidFactory() throws InterruptedException {
+    public GhostCovid[] covidFactory() throws InterruptedException {
 
-        for (int i = 0; i < numberCovid; i++) {
-            covids = new GhostCovid(col, row);
-            col += 50;
-            covids.moveInDirection();
+        for (int i = 0; i < covids.length; i++) {
+            covids[i] = new GhostCovid(col, row);
+
         }
+        return covids;
     }
 
 
