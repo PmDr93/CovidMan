@@ -37,12 +37,12 @@ public class GhostCovid extends Characters implements Controllable {
 
 
     public void moveInDirection() throws InterruptedException {
-        //case 1 = up, case 2 = down, case 3 = left, case 4 = right
+
         double random1 = Math.random();
 
 
 
-        while (!dead) {
+        if (!dead) {
             double random = Math.random();
             Thread.sleep(150);
             if (random < 0.25) {
