@@ -38,7 +38,15 @@ public class Game {
         control.init();
         pacMan.setSyringe(syringe);
         pacMan.setCovid(covid);
-        catchLetter();
+
+        while(true) {
+            catchLetter();
+            pacMan.syringeUsed();
+            pacMan.killCovid();
+            pacMan.deadByGhost();
+
+
+        }
 
     }
 
@@ -48,10 +56,10 @@ public class Game {
        Picture[] fieldWord = words.getCodigo();
        Picture[] downWord = words.getCodigoDown();
 
-       if (fieldWord[0].getX() > pacMan.getX() && fieldWord[0].getY() > pacMan.getY()) {
+       if (fieldWord[0].getX() == pacMan.getX() && fieldWord[0].getY() == pacMan.getY()) {
            fieldWord[0].delete();
            downWord[0].draw();
-       } else if (fieldWord[1].getX() > pacMan.getX() && fieldWord[1].getY() > pacMan.getY()) {
+       } else if (fieldWord[1].getX() == pacMan.getX() && fieldWord[1].getY() == pacMan.getY()) {
            fieldWord[1].delete();
            downWord[1].draw();
        } else if (fieldWord[2].getX() == pacMan.getX() && fieldWord[2].getY() == pacMan.getY()) {

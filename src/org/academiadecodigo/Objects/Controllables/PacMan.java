@@ -114,9 +114,6 @@ public class PacMan extends Characters implements Controllable {
             col += 25;
         }
 
-        syringeUsed();
-        killCovid();
-        deadByGhost();
 
 
     }
@@ -132,9 +129,7 @@ public class PacMan extends Characters implements Controllable {
             col -= 25;
         }
 
-        syringeUsed();
-        killCovid();
-        deadByGhost();
+
     }
 
     @Override
@@ -147,9 +142,6 @@ public class PacMan extends Characters implements Controllable {
             row -= 25;
         }
 
-        syringeUsed();
-        killCovid();
-        deadByGhost();
 
     }
 
@@ -164,9 +156,7 @@ public class PacMan extends Characters implements Controllable {
             row += 25;
         }
 
-        deadByGhost();
-        syringeUsed();
-        killCovid();
+
 
 
     }
