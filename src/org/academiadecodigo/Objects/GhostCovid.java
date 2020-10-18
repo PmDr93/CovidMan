@@ -86,7 +86,10 @@ public class GhostCovid extends Characters implements Controllable {
     @Override
     public void moveRight() {
         covid.load("resources/CovidRight.png");
-        if (col >= 39*25) {
+        if (col >= 39*25 || ((col >= 8*25 && col <= 10*25) && (row >= 4*25 && row <= 11*25)) //=======wall1
+                || ((col >= 4*25 && col <= 6*25 && row >= 18*25 && row <= 18*25)) //=============wall4
+                || (col >= 19*25 && col <= 21*25 && row >= 13*25 && row < 14*25) //=============wall5
+                || (col <= 19*25 && col >= 18*25 && row >= 3*25 && row <= 7*25) ) {
             initialMove = Moves.LEFT;
         } else {
             covid.translate(25,0);
@@ -97,7 +100,11 @@ public class GhostCovid extends Characters implements Controllable {
     @Override
     public void moveLeft() {
         covid.load("resources/NewCovid.png");
-        if (col <= 10) {
+        if (col <= 10 || ((col <= 11*25 && col >= 10*25) && (row >= 4*25 && row <= 11*25)) // ====== wall1
+                || (col <= 6*25 &&  row == 6*25) || (col <= 6*25 &&  row == 14*25)  //==========wall2 & 3
+                || ((col >= 25*25 && col <= 26*25 && row >= 18*25 && row <= 18*25)) // ====== wall4
+                || (col >= 30*25 && col <= 40*25 && row >= 13*25 && row < 14*25 )  // ====== wall5
+                || (col <= 21*25 && col >= 19*25 && row >= 3*25 && row <= 7*25)) {
             initialMove = Moves.RIGHT;
         } else {
             covid.translate(-25, 0);
@@ -108,7 +115,11 @@ public class GhostCovid extends Characters implements Controllable {
     @Override
     public void moveUp() {
         covid.load("resources/CovidUp.png");
-        if (row <= 50) {
+        if (row <= 50 || ((row <= 12*25 && row >= 4*25) && col == 235)   //==============wall1
+                || (row == 7*25 && (col >= 0 && col <= 5*25) || (row == 15*25 && (col >= 0 && col <= 5*25))) //====== wall2 & 3
+                || (row == 19*25 && (col >= 5*25 && col <= 25*25))  //==============wall4
+                || (row >= 14*25 && row < 15*25 && col <= 39*25 && col >= 20*25 )  //===========wall5
+                || (row >= 8*25 && row < 9*25 && col >= 19*25 && col < 20*25 )) {
             initialMove = Moves.DOWN;
         } else {
             covid.translate(0, -25);
@@ -120,7 +131,11 @@ public class GhostCovid extends Characters implements Controllable {
     @Override
     public void moveDown() {
         covid.load("resources/CovidDown.png");
-        if (row >= 21*25) {
+        if (row >= 21*25 || ((row >= 3*25 && row <= 7*25) && col == 235)   //=======wall1
+                || (row == 5*25 && (col >= 0 && col <= 5*25)) || (row == 13*25 && (col >= 0 && col <= 5*25)) //==== wall2 & 3
+                || (row == 17*25 && (col >= 5*25 && col <= 25*25)) //===========wall4
+                || (row >= 12*25 && row < 13*25 && col <= 39*25 && col >= 20*25 ) //===========wall5
+                || (row >= 2*25 && row < 8*25 && col >= 19*25 && col < 20*25 )) {
             initialMove = Moves.UP;
         } else {
             covid.translate(0, 25);

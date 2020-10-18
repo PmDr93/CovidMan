@@ -168,7 +168,7 @@ public class PacMan extends Characters implements Controllable {
         if (row <= 50 || ((row <= 12*25 && row >= 4*25) && col == 235)   //==============wall1
                 || (row == 7*25 && (col >= 0 && col <= 5*25) || (row == 15*25 && (col >= 0 && col <= 5*25))) //====== wall2 & 3
                   || (row == 19*25 && (col >= 5*25 && col <= 25*25))  //==============wall4
-                    || (row >= 14*25 && row < 15*25 && col <= 39*25 && col >= 20*25 )
+                    || (row >= 14*25 && row < 15*25 && col <= 39*25 && col >= 20*25 )  //===========wall5
                     || (row >= 8*25 && row < 9*25 && col >= 19*25 && col < 20*25 )){
             pacman.translate(0, 0);
         } else {
@@ -184,7 +184,7 @@ public class PacMan extends Characters implements Controllable {
         if (row >= 21*25 || ((row >= 3*25 && row <= 7*25) && col == 235)   //=======wall1
                     || (row == 5*25 && (col >= 0 && col <= 5*25)) || (row == 13*25 && (col >= 0 && col <= 5*25)) //==== wall2 & 3
                     || (row == 17*25 && (col >= 5*25 && col <= 25*25)) //===========wall4
-                     || (row >= 12*25 && row < 13*25 && col <= 39*25 && col >= 20*25 )
+                     || (row >= 12*25 && row < 13*25 && col <= 39*25 && col >= 20*25 )      //===========wall5
                         || (row >= 2*25 && row < 8*25 && col >= 19*25 && col < 20*25 )) {
             pacman.translate(0, 0);
         } else {

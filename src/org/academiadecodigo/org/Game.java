@@ -45,7 +45,7 @@ public class Game implements KeyListener {
             pacMan.deadByGhost(covids);
             //collisionDetection.collision(pacMan.getImage(), field.getObstacles());
             //pacMan.collisionObj(rectangle);
-            //moveAll();
+            moveAll();
 
         }
 
