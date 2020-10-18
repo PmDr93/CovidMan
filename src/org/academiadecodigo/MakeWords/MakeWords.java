@@ -8,7 +8,6 @@ public class MakeWords {
 
     //words: CODIGO, ACADEMIA,BOOTCAMP
     private Picture picture;
-    private Picture codigoLetter;
 
 
     private Picture[] codigo = new Picture[] {

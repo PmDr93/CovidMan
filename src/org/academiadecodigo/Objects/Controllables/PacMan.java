@@ -2,6 +2,8 @@ package org.academiadecodigo.Objects.Controllables;
 
 import org.academiadecodigo.Objects.Characters;
 import org.academiadecodigo.Objects.GhostCovid;
+import org.academiadecodigo.org.Game;
+import org.academiadecodigo.simplegraphics.graphics.Ellipse;
 import org.academiadecodigo.Objects.Syringe;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
@@ -14,8 +16,10 @@ public class PacMan extends Characters implements Controllable {
     private Picture pacman;
     private Syringe syringe;
     private boolean hasSyringe;
+    //private Game test;
 
     public PacMan(){
+        //test = game;
         this.pacman = new Picture(col,row,"resources/PixelArt.png");
         this.pacman.draw();
     }
@@ -91,7 +95,7 @@ public class PacMan extends Characters implements Controllable {
     public void killCovid() {
         if (syringe.getIsUsed() == true) {
             if (pacman.getX() == covid.getX() && pacman.getY() == covid.getY()) {
-                covid.death();
+                covid.kill();
         } else {
                 deadByGhost();
             }
@@ -114,8 +118,6 @@ public class PacMan extends Characters implements Controllable {
             col += 25;
         }
 
-
-
     }
 
     @Override
@@ -129,7 +131,6 @@ public class PacMan extends Characters implements Controllable {
             col -= 25;
         }
 
-
     }
 
     @Override
@@ -142,12 +143,10 @@ public class PacMan extends Characters implements Controllable {
             row -= 25;
         }
 
-
     }
 
     @Override
     public void moveDown() {
-
         pacman.load("resources/PacDown.png");
         if (row >= 21*25) {
             pacman.translate(0, 0);
@@ -155,9 +154,6 @@ public class PacMan extends Characters implements Controllable {
             pacman.translate(0, 25);
             row += 25;
         }
-
-
-
 
     }
 
