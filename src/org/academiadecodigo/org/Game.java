@@ -1,5 +1,6 @@
 package org.academiadecodigo.org;
 
+import javafx.stage.Screen;
 import org.academiadecodigo.Controls.Controls;
 import org.academiadecodigo.MakeWords.MakeWords;
 import org.academiadecodigo.Objects.Characters;
@@ -11,16 +12,20 @@ import org.academiadecodigo.graphics.Field;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.graphics.Text;
+import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
+import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
+import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Game implements KeyListener {
+public class Game {
 
     private Field field;
     private int score;
+    private boolean startGame;
     private PacMan pacMan;
     private GhostCovid[] covids;
     private Syringe syringe;
@@ -28,42 +33,51 @@ public class Game implements KeyListener {
     private CovidFactory factory = new CovidFactory();
     //private GhostCovid covid;
     private MakeWords words = new MakeWords();
+    private Controls control = new Controls();
+    private Picture startScreen = new Picture(10,10,"resources/test 2.png");
+
     Picture heart1 = new Picture(20, 20, "resources/Hearth.png");
+
+    public void globalStart() throws InterruptedException {
+        if(startGame){
+            init();
+            start();
+        }
+    }
+
+    public void setStartGame(){
+        startGame = true;
+    }
 
 
     public void start() throws InterruptedException {
 
-
-
         while (true) {
+            //start.delete();
             catchLetter();
             pacMan.syringeUsed();
             pacMan.killCovid(covids);
             pacMan.deadByGhost(covids);
 
-
             moveAll();
 
         }
-
-
     }
 
     // iniciar todos os objectos dentro de campo
     public void init() throws InterruptedException {
+
         field = new Field();
         field.init();
         syringe = new Syringe();
         words.draw();
         heart1.draw();
         pacMan = new PacMan();
-        Controls control = new Controls();
         control.setPacman(pacMan);
         control.init();
         covids = factory.covidFactory();
         pacMan.setSyringe(syringe);
         pacMan.setCovid(factory.getCovid());
-
 
     }
 
@@ -110,28 +124,19 @@ public class Game implements KeyListener {
 
     }
 
-    public void startScreen(){
-        Rectangle backGround = new Rectangle(10,10,1000,450);
-        backGround.setColor(Color.BLACK);
-        backGround.fill();
-        Text startScreen = new Text(450,250,"Press S to Start");
-        startScreen.setColor(Color.WHITE);
+    public void startScreen() throws InterruptedException {
+        control.initGame();
+        control.setGame(this);
         startScreen.draw();
+        while(startGame != true){
+            Thread.sleep(10);
+        }
+        init();
+        start();
 
     }
 
-    @Override
-    public void keyTyped(KeyEvent e) {
-
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-
+    public void deleteStart(){
+        startScreen.delete();
     }
 }

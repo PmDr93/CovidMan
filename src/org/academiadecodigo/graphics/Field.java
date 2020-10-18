@@ -37,11 +37,6 @@ public class Field implements Grid {
         horizontalWall.fill();
     }
 
-
-
-
-
-
     @Override
     public int getCols() {
         return 0;
