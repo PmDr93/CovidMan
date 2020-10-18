@@ -12,19 +12,26 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Field implements Grid {
     private static final int PADDING = 10;
     private static final int CELL_SIZE = 25;
+    private Rectangle field;
+    private Rectangle fieldGame;
 
 
     @Override
     public void init() {
-        Rectangle field = new Rectangle(PADDING, PADDING, 40*CELL_SIZE,25*CELL_SIZE);
+        field = new Rectangle(PADDING, PADDING, 40*CELL_SIZE,25*CELL_SIZE);
         field.setColor(Color.BLACK);
         field.fill();
-        Rectangle fieldGame = new Rectangle(PADDING, 50, 40*CELL_SIZE, 20*CELL_SIZE);
+        fieldGame = new Rectangle(PADDING, 50, 40*CELL_SIZE, 20*CELL_SIZE);
         fieldGame.setColor(Color.WHITE);
         fieldGame.draw();
         drawObstacles();
     }
 
+    public void endGame(){
+        field.delete();
+        fieldGame.delete();
+
+    }
 
 
     public void drawObstacles(){

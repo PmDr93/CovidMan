@@ -18,6 +18,9 @@ public class PacMan extends Characters implements Controllable {
     private boolean hasSyringe;
     //private Game test;
 
+    public void removeFromField(){
+        pacman.delete();
+    }
     public PacMan(){
         //test = game;
         this.pacman = new Picture(col,row,"resources/PixelArt.png");

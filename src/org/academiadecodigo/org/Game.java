@@ -49,18 +49,21 @@ public class Game {
         startGame = true;
     }
 
-
     public void start() throws InterruptedException {
 
-        while (true) {
+        while (startGame) {
             //start.delete();
             catchLetter();
             pacMan.syringeUsed();
             pacMan.killCovid(covids);
             pacMan.deadByGhost(covids);
-
             moveAll();
 
+            if(pacMan.getLives() < 0){
+                startGame = false;
+                endScreen();
+                return;
+            }
         }
     }
 
@@ -133,10 +136,19 @@ public class Game {
         }
         init();
         start();
-
     }
 
     public void deleteStart(){
         startScreen.delete();
+    }
+
+    public void endScreen(){ // FALTA ACRESCENTAR OBSTACLES.REMOVE E LETTERS.REMOVE
+        pacMan.removeFromField();
+        for(GhostCovid covid: covids){
+            covid.removeFromField();
+        }
+        Picture gameOver = new Picture(200,150,"resources/gameove.jpg");
+        gameOver.draw();
+
     }
 }
