@@ -1,6 +1,6 @@
 package org.academiadecodigo.org;
 
-//import javafx.stage.Screen;
+
 import org.academiadecodigo.Controls.Controls;
 import org.academiadecodigo.MakeWords.MakeWords;
 import org.academiadecodigo.Objects.Characters;
@@ -11,10 +11,6 @@ import org.academiadecodigo.Objects.Syringe;
 import org.academiadecodigo.graphics.Field;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
-import org.academiadecodigo.simplegraphics.graphics.Text;
-import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
-import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
-import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 import java.awt.*;
@@ -60,7 +56,7 @@ public class Game {
             pacMan.deadByGhost(covids);
             moveAll();
 
-            if(lettersCaptured[lettersCaptured.length-2] != null){
+            if(lettersCaptured[lettersCaptured.length-1] != null){
                 startGame = false;
                 endScreen();
             }
