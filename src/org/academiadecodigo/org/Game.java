@@ -46,8 +46,7 @@ public class Game {
     Picture heart1 = new Picture (20, 20, "resources/Hearth.png");
 
     public void globalStart() throws InterruptedException, IOException, LineUnavailableException {
-        Musics ();
-        this.menuMusic.play (false);
+
         if (startGame) {
 
             init ();
@@ -56,9 +55,9 @@ public class Game {
         }
     }
 
-    public void Musics() throws IOException, LineUnavailableException {
+    /*public void Musics() throws IOException, LineUnavailableException {
         this.menuMusic = new Sound ("resources/Sounds/dogbarking.wav");
-    }
+    }*/
 
     public void setStartGame() {
         startGame = true;
