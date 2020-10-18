@@ -4,7 +4,7 @@
     <target name="init" description="Initializes properties">
         <property name="project.name" value="CovidMan" />
         <property name="src.dir" value="src" />
-        <property name="main.class" value="org.academiadecodigo.Main" />
+        <property name="main.class" value="org.academiadecodigo.org.Main" />
         <property name="build.dir" value="build" />
         <property name="classes.dir" value="${build.dir}/classes" />
         <property name="lib.dir" value="lib" />
