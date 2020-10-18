@@ -7,6 +7,7 @@ import org.academiadecodigo.Objects.Controllables.PacMan;
 import org.academiadecodigo.Objects.CovidFactory;
 import org.academiadecodigo.Objects.GhostCovid;
 import org.academiadecodigo.Objects.Syringe;
+import org.academiadecodigo.graphics.CollisionDetection;
 import org.academiadecodigo.graphics.Field;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
@@ -26,9 +27,11 @@ public class Game implements KeyListener {
     private Syringe syringe;
     private Picture picture;
     private CovidFactory factory = new CovidFactory();
-    //private GhostCovid covid;
+    private CollisionDetection collisionDetection = new CollisionDetection();
     private MakeWords words = new MakeWords();
     Picture heart1 = new Picture(20, 20, "resources/Hearth.png");
+
+    //Rectangle wall1 = new Rectangle(235, 100, 25, 8*25);
 
 
     public void start() throws InterruptedException {
@@ -40,9 +43,9 @@ public class Game implements KeyListener {
             pacMan.syringeUsed();
             pacMan.killCovid(covids);
             pacMan.deadByGhost(covids);
-
-
-            moveAll();
+            //collisionDetection.collision(pacMan.getImage(), field.getObstacles());
+            //pacMan.collisionObj(rectangle);
+            //moveAll();
 
         }
 
@@ -63,6 +66,10 @@ public class Game implements KeyListener {
         covids = factory.covidFactory();
         pacMan.setSyringe(syringe);
         pacMan.setCovid(factory.getCovid());
+        //just test
+
+
+
 
 
     }

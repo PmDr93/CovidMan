@@ -5,6 +5,7 @@ import org.academiadecodigo.Objects.GhostCovid;
 import org.academiadecodigo.org.Game;
 import org.academiadecodigo.simplegraphics.graphics.Ellipse;
 import org.academiadecodigo.Objects.Syringe;
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class PacMan extends Characters implements Controllable {
@@ -22,6 +23,10 @@ public class PacMan extends Characters implements Controllable {
         //test = game;
         this.pacman = new Picture(col,row,"resources/PixelArt.png");
         this.pacman.draw();
+    }
+
+    public Picture getImage() {
+        return this.pacman;
     }
 
     public int getRow() {
@@ -111,10 +116,27 @@ public class PacMan extends Characters implements Controllable {
 
     // movement and boundaries of pac man
 
+    public void collisionObj(Rectangle obs) {
+        //for (int i = 0; i < obs.length; i++) {
+            /*if (pac.getX() == obs[i].getX() || pac.getX() == obs[i].getY()){
+                pac.translate(0,0);
+            }*/
+            if (pacman.getX() == obs.getX() && pacman.getY() == obs.getY()) {
+                    pacman.translate(0, 0);
+            }
+        //}
+    }
+
+
+
     @Override
     public void moveRight() {
         pacman.load("resources/PixelArt.png");
-        if (col >= 39*25) {
+
+        if (col >= 39*25 || ((col >= 8*25 && col <= 10*25) && (row >= 4*25 && row <= 11*25)) //=======wall1
+                || ((col >= 4*25 && col <= 6*25 && row >= 18*25 && row <= 18*25)) //=============wall4
+                  || (col >= 19*25 && col <= 21*25 && row >= 13*25 && row < 14*25) //=============wall5
+                  || (col <= 19*25 && col >= 18*25 && row >= 3*25 && row <= 7*25)  ) {
             pacman.translate(0, 0);
         } else {
             pacman.translate(25, 0);
@@ -127,7 +149,11 @@ public class PacMan extends Characters implements Controllable {
     public void moveLeft() {
         pacman.load("resources/PacLeft.png");
 
-        if (col <= 10) {
+        if (col <= 10 || ((col <= 11*25 && col >= 10*25) && (row >= 4*25 && row <= 11*25)) // ====== wall1
+                || (col <= 6*25 &&  row == 6*25) || (col <= 6*25 &&  row == 14*25)  //==========wall2 & 3
+                || ((col >= 25*25 && col <= 26*25 && row >= 18*25 && row <= 18*25)) // ====== wall4
+                 || (col >= 30*25 && col <= 40*25 && row >= 13*25 && row < 14*25 )  // ====== wall5
+                    || (col <= 21*25 && col >= 19*25 && row >= 3*25 && row <= 7*25)) {
             pacman.translate(0, 0);
         } else {
             pacman.translate(-25, 0);
@@ -139,7 +165,11 @@ public class PacMan extends Characters implements Controllable {
     @Override
     public void moveUp() {
         pacman.load("resources/PacUp.png");
-        if (row <= 50) {
+        if (row <= 50 || ((row <= 12*25 && row >= 4*25) && col == 235)   //==============wall1
+                || (row == 7*25 && (col >= 0 && col <= 5*25) || (row == 15*25 && (col >= 0 && col <= 5*25))) //====== wall2 & 3
+                  || (row == 19*25 && (col >= 5*25 && col <= 25*25))  //==============wall4
+                    || (row >= 14*25 && row < 15*25 && col <= 39*25 && col >= 20*25 )
+                    || (row >= 8*25 && row < 9*25 && col >= 19*25 && col < 20*25 )){
             pacman.translate(0, 0);
         } else {
             pacman.translate(0, -25);
@@ -151,7 +181,11 @@ public class PacMan extends Characters implements Controllable {
     @Override
     public void moveDown() {
         pacman.load("resources/PacDown.png");
-        if (row >= 21*25) {
+        if (row >= 21*25 || ((row >= 3*25 && row <= 7*25) && col == 235)   //=======wall1
+                    || (row == 5*25 && (col >= 0 && col <= 5*25)) || (row == 13*25 && (col >= 0 && col <= 5*25)) //==== wall2 & 3
+                    || (row == 17*25 && (col >= 5*25 && col <= 25*25)) //===========wall4
+                     || (row >= 12*25 && row < 13*25 && col <= 39*25 && col >= 20*25 )
+                        || (row >= 2*25 && row < 8*25 && col >= 19*25 && col < 20*25 )) {
             pacman.translate(0, 0);
         } else {
             pacman.translate(0, 25);
