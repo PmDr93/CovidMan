@@ -73,31 +73,34 @@ public class PacMan extends Characters implements Controllable {
 
     //use syringe
     public void syringeUsed() {
+
         if (pacman.getY() == syringe.getY() && pacman.getX() == syringe.getX()) {
             syringe.setUsed(true);
             hasSyringe = true;
             syringe.remove();
-            killCovid();
+            //killCovid();
         }
     }
 
     //when pac touch ghost lose life
 
-    public void deadByGhost() {
-        if (pacman.getX() == covid.getX() && pacman.getY() == covid.getY() && !hasSyringe) {
-            setDead(true);
-            loseLife();
-            pacman.delete();
-
+    public void deadByGhost(GhostCovid[] covids) {
+        for(GhostCovid ghost: covids) {
+            if (pacman.getX() == ghost.getX() && pacman.getY() == ghost.getY() && hasSyringe == false && ghost.isDead()==false) {
+                setDead(true);
+                lives--;
+                pacman.delete();
+            }
         }
     }
 
-    public void killCovid() {
-        if (syringe.getIsUsed() == true) {
-            if (pacman.getX() == covid.getX() && pacman.getY() == covid.getY()) {
-                covid.kill();
-        } else {
-                deadByGhost();
+    public void killCovid(GhostCovid[] covids) {
+        for (GhostCovid ghost: covids) {
+            if (hasSyringe == true) {
+                if (pacman.getX() == ghost.getX() && pacman.getY() == ghost.getY()) {
+                    ghost.kill();
+                    hasSyringe = false;
+                }
             }
         }
     }

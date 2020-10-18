@@ -38,6 +38,10 @@ public class GhostCovid extends Characters implements Controllable {
         covid.delete();
     }
 
+    public boolean isDead(){
+        return dead;
+    }
+
     public double randomizer(){
         return Math.random();
 }
@@ -81,6 +85,7 @@ public class GhostCovid extends Characters implements Controllable {
 
     @Override
     public void moveRight() {
+        covid.load("resources/CovidRight.png");
         if (col >= 39*25) {
             initialMove = Moves.LEFT;
         } else {
@@ -91,6 +96,7 @@ public class GhostCovid extends Characters implements Controllable {
 
     @Override
     public void moveLeft() {
+        covid.load("resources/NewCovid.png");
         if (col <= 10) {
             initialMove = Moves.RIGHT;
         } else {
@@ -101,6 +107,7 @@ public class GhostCovid extends Characters implements Controllable {
 
     @Override
     public void moveUp() {
+        covid.load("resources/CovidUp.png");
         if (row <= 50) {
             initialMove = Moves.DOWN;
         } else {
@@ -112,6 +119,7 @@ public class GhostCovid extends Characters implements Controllable {
 
     @Override
     public void moveDown() {
+        covid.load("resources/CovidDown.png");
         if (row >= 21*25) {
             initialMove = Moves.UP;
         } else {
