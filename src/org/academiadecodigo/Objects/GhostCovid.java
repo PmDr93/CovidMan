@@ -25,6 +25,10 @@ public class GhostCovid extends Characters implements Controllable {
         //moveInDirection();
     }
 
+    public void removeFromField(){
+        covid.delete();
+    }
+
     public int getX() {
         return covid.getX();
     }

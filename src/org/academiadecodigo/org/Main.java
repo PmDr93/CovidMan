@@ -4,6 +4,7 @@ import org.academiadecodigo.Controls.Controls;
 import org.academiadecodigo.MakeWords.MakeWords;
 import org.academiadecodigo.Objects.Controllables.PacMan;
 import org.academiadecodigo.graphics.Field;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Main {
 
@@ -11,8 +12,8 @@ public class Main {
 
         Game game = new Game();
 
-        game.init();
-        game.start();
+        game.startScreen();
+        game.globalStart();
 
 
     }

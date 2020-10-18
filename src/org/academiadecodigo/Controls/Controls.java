@@ -1,6 +1,7 @@
 package org.academiadecodigo.Controls;
 
 import org.academiadecodigo.Objects.Controllables.PacMan;
+import org.academiadecodigo.org.Game;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
@@ -10,6 +11,8 @@ public class Controls implements KeyboardHandler{
 
     private Keyboard keyboard;
     private PacMan pacman;
+    private Game game;
+
 
     public void init() {
         // defines what each key does (movement)
@@ -19,11 +22,20 @@ public class Controls implements KeyboardHandler{
         keyLeft();
         keyRight();
         keyUp();
-
     }
 
     public void setPacman(PacMan pacman) {
         this.pacman = pacman;
+    }
+
+    public void setGame (Game game){
+        this.game = game;
+    }
+
+
+    public void initGame(){
+        keyboard = new Keyboard(this);
+        keyStart();
     }
 
     public void keyLeft(){
@@ -40,7 +52,6 @@ public class Controls implements KeyboardHandler{
 
         keyboard.addEventListener(rightPressed);
     }
-
      public void keyUp() {
          KeyboardEvent upPressed = new KeyboardEvent();
          upPressed.setKey(KeyboardEvent.KEY_UP);
@@ -56,9 +67,22 @@ public class Controls implements KeyboardHandler{
         keyboard.addEventListener(downPressed);
     }
 
+    public void keyStart(){
+        KeyboardEvent s = new KeyboardEvent();
+        s.setKey(KeyboardEvent.KEY_S);
+        s.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+
+        keyboard.addEventListener(s);
+    }
+
     //Connects pacman's movements to the keys
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
+        if(keyboardEvent.getKey() == keyboardEvent.KEY_S) {
+            game.deleteStart();
+            game.setStartGame();
+        }
+
         if (keyboardEvent.getKey()==keyboardEvent.KEY_UP) {
             pacman.moveUp();
         } else if (keyboardEvent.getKey()==keyboardEvent.KEY_DOWN){
@@ -70,6 +94,8 @@ public class Controls implements KeyboardHandler{
         }
 
     }
+
+
 
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {
