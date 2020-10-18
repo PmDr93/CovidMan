@@ -1,6 +1,6 @@
 package org.academiadecodigo.org;
 
-import javafx.stage.Screen;
+//import javafx.stage.Screen;
 import org.academiadecodigo.Controls.Controls;
 import org.academiadecodigo.MakeWords.MakeWords;
 import org.academiadecodigo.Objects.Characters;
