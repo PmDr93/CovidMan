@@ -29,7 +29,7 @@ public class Game {
 
     public void start() throws InterruptedException {
 
-        factory.covidFactory();
+
 
         while(true) {
             catchLetter();
@@ -37,11 +37,13 @@ public class Game {
             pacMan.killCovid();
             pacMan.deadByGhost();
 
-            moveAll();
+
         }
 
+        //factory.covidFactory();
 
 
+        //moveAll();
 
 
 
