@@ -32,7 +32,7 @@ public class Game {
         heart1.draw();
         pacMan = new PacMan();
         syringe = new Syringe();
-        covid = new GhostCovid(810, 500);
+
         Controls control = new Controls();
         control.setPacman(pacMan);
         control.init();
