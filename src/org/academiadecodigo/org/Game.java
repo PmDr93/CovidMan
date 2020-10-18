@@ -21,7 +21,7 @@ public class Game {
     private Syringe syringe;
     private Picture picture;
     private CovidFactory factory = new CovidFactory();
-    private GhostCovid covid;
+    //private GhostCovid covid;
     private MakeWords words = new MakeWords();
     Picture heart1 = new Picture(20, 20, "resources/Hearth.png");
 
@@ -38,14 +38,9 @@ public class Game {
             pacMan.deadByGhost();
 
 
+            moveAll();
+
         }
-
-        //factory.covidFactory();
-
-
-        //moveAll();
-
-
 
 
 
@@ -62,9 +57,11 @@ public class Game {
         Controls control = new Controls();
         control.setPacman(pacMan);
         control.init();
-        //covids = factory.covidFactory();
+        covids = factory.covidFactory();
         pacMan.setSyringe(syringe);
-        pacMan.setCovid(covid);
+        pacMan.setCovid(factory.getCovid());
+
+
     }
 
     public void moveAll() throws InterruptedException {

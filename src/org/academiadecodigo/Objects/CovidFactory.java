@@ -3,7 +3,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class CovidFactory {
 
-    private int numberCovid = 10;
+    private int numberCovid = 5;
     private GhostCovid[] covids = new GhostCovid[numberCovid];
     private Picture covid;
     protected int col = 910;
@@ -16,6 +16,14 @@ public class CovidFactory {
 
     public int getRow() {
         return row;
+    }
+
+    public GhostCovid getCovid() {
+        GhostCovid getCovid = null;
+        for (int i = 0; i < covids.length; i++) {
+            getCovid = covids[i];
+        }
+        return getCovid;
     }
 
     public GhostCovid[] covidFactory() throws InterruptedException {
