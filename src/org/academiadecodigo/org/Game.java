@@ -56,7 +56,8 @@ public class Game {
             pacMan.deadByGhost(covids);
             moveAll();
 
-            if(lettersCaptured[lettersCaptured.length-1] != null){
+            for (String go : lettersCaptured){
+                if ()
                 startGame = false;
                 endScreen();
             }
